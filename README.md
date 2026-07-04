@@ -24,7 +24,7 @@ gemini extensions uninstall stride-gemini
 
 | Extension | Version | Install | Description |
 |-----------|---------|---------|-------------|
-| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.33.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. |
+| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.34.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. |
 
 The table above is kept in sync with the machine-readable index in [`extensions.json`](extensions.json).
 
