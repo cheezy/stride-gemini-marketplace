@@ -28,6 +28,22 @@ gemini extensions uninstall stride-gemini
 
 The table above is kept in sync with the machine-readable index in [`extensions.json`](extensions.json).
 
+## Releases and tagging
+
+**Every sync commit gets a tag and a GitHub release, named for the extension version it pins.** The catalog tag mirrors the extension: the commit that pins `stride-gemini` `1.36.0` is tagged `v1.36.0`. That is the convention — `v1.32.0`, `v1.33.0`, `v1.34.0`, `v1.34.1` and `v1.36.0` each sit on their matching `Sync stride-gemini to X` commit.
+
+**These tags are a release record, not a resolution mechanism.** Nothing installs *through* them. `extensions.json` pins each extension by a bare repository URL with no version, tag, or ref — and, as noted at the top of this file, Gemini CLI does not consume this catalog at all. An install resolves to the extension repo's default branch; the catalog's `version` field and this repo's tags exist so a human can see what was pinned when.
+
+### The missing `v1.35.0` — an omission we're accepting, not a lost release
+
+The tag line jumps from `v1.34.1` to `v1.36.0`. The commit that pins `1.35.0` (`098af16`, "Sync stride-gemini to 1.35.0") was committed and pushed during the D144/W1667 cycle but never tagged or released. **That gap is accepted and will not be backfilled.** It is recorded here so the next release engineer does not have to rediscover it:
+
+- **Nothing was affected.** Because the tags resolve no installs, the missing tag cost nothing at the time and costs nothing now. Anyone who installed while `1.35.0` was pinned got the extension's default branch, exactly as they would have with the tag present.
+- **Backfilling would be worse than the gap.** A retroactive `v1.35.0` would be dated today against a commit from 2026-07-14, and would point at a pin state that `v1.36.0` has already superseded — manufacturing a release record for a state no user ever resolved through, and misrepresenting the history it claims to document.
+- **The convention itself is unchanged.** `v1.35.0` is an omission from one cycle, not a policy. Tag every sync.
+
+The `stride-gemini` extension repo's own `v1.35.0` tag and GitHub release are correct and present — only this catalog's record has the hole.
+
 ## License
 
 [MIT](LICENSE) © 2026 Jeff Morgan
