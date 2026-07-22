@@ -24,7 +24,7 @@ gemini extensions uninstall stride-gemini
 
 | Extension | Version | Install | Description |
 |-----------|---------|---------|-------------|
-| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.36.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. |
+| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.37.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. |
 | [`stride-gemini-exploratory-testing`](https://github.com/cheezy/stride-gemini-exploratory-testing) | 0.1.0 | `gemini extensions install https://github.com/cheezy/stride-gemini-exploratory-testing` | Skilled human-style exploratory testing for Stride kanban — the Gemini CLI extension. Charter, explore, and debrief time-boxed exploratory-testing sessions against a running app, using heuristics, oracles, and SBTM session discipline to discover the risks and bugs scripted checks miss. |
 
 The table above is kept in sync with the machine-readable index in [`extensions.json`](extensions.json).
@@ -44,6 +44,16 @@ The tag line jumps from `v1.34.1` to `v1.36.0`. The commit that pins `1.35.0` (`
 - **The convention itself is unchanged.** `v1.35.0` is an omission from one cycle, not a policy. Tag every sync.
 
 The `stride-gemini` extension repo's own `v1.35.0` tag and GitHub release are correct and present — only this catalog's record has the hole.
+
+### `v1.37.0` names the exploratory-testing add, so the 1.37.0 `stride-gemini` pin is tagged `v1.38.0`
+
+The catalog tag `v1.37.0` does **not** pin `stride-gemini` 1.37.0 — it marks the commit that *registered* the `stride-gemini-exploratory-testing` extension while `stride-gemini` was still pinned at 1.36.0. That release borrowed the next number in the catalog's own sequence rather than mirroring a `stride-gemini` bump, so when `stride-gemini` genuinely reached 1.37.0 its pin could no longer take the matching tag.
+
+**The 1.37.0 `stride-gemini` pin is therefore tagged `v1.38.0`, not `v1.37.0`.** This is a one-time break from the mirror convention, recorded here so the next release engineer does not read it as an error:
+
+- **The catalog's tag sequence — not the extension version — is authoritative once a number is used.** `v1.37.0` is already a real, different release; the next sync simply takes the next free number (`v1.38.0`). The `version` field inside `extensions.json` still reads the true pinned extension version (`1.37.0`) — only the git tag diverges.
+- **Nothing resolves through the tag**, so the divergence costs nothing at install time (see the convention note above) — it only touches the human-readable release record, which this note reconciles.
+- **The mirror convention still holds going forward** wherever the number is free: a future `stride-gemini` `1.39.0` pin should be tagged `v1.39.0`. Tag every sync; take the next free number only when the mirrored one is already used.
 
 ## License
 
