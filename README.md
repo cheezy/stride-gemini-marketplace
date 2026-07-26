@@ -24,7 +24,7 @@ gemini extensions uninstall stride-gemini
 
 | Extension | Version | Install | Description |
 |-----------|---------|---------|-------------|
-| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.38.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. Optionally integrates the stride-gemini-exploratory-testing and stride-gemini-security-review extensions for gated manual testing and a deep security-considerations review. |
+| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.39.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. Optionally integrates the stride-gemini-exploratory-testing and stride-gemini-security-review extensions for gated manual testing and a deep security-considerations review. |
 | [`stride-gemini-exploratory-testing`](https://github.com/cheezy/stride-gemini-exploratory-testing) | 0.1.0 | `gemini extensions install https://github.com/cheezy/stride-gemini-exploratory-testing` | Skilled human-style exploratory testing for Stride kanban — the Gemini CLI extension. Charter, explore, and debrief time-boxed exploratory-testing sessions against a running app, using heuristics, oracles, and SBTM session discipline to discover the risks and bugs scripted checks miss. |
 | [`stride-gemini-security-review`](https://github.com/cheezy/stride-gemini-security-review) | 0.1.1 | `gemini extensions install https://github.com/cheezy/stride-gemini-security-review` | AI-powered security review for code changes on Stride kanban — the Gemini CLI extension. Semantic-analysis vulnerability detection over a diff or the full tree, seven framework rule packs plus CI/CD and web defense-in-depth coverage, MAESTRO agentic-AI classification, SARIF output, severity gating, and a considerations mode that verifies a task's security_considerations were actually mitigated by the diff. |
 
@@ -54,7 +54,21 @@ The catalog tag `v1.37.0` does **not** pin `stride-gemini` 1.37.0 — it marks t
 
 - **The catalog's tag sequence — not the extension version — is authoritative once a number is used.** `v1.37.0` is already a real, different release; the next sync simply takes the next free number (`v1.38.0`). The `version` field inside `extensions.json` still reads the true pinned extension version (`1.37.0`) — only the git tag diverges.
 - **Nothing resolves through the tag**, so the divergence costs nothing at install time (see the convention note above) — it only touches the human-readable release record, which this note reconciles.
-- **The mirror convention still holds going forward** wherever the number is free: a future `stride-gemini` `1.39.0` pin should be tagged `v1.39.0`. Tag every sync; take the next free number only when the mirrored one is already used.
+- **The mirror convention still holds going forward** wherever the number is free. Tag every sync; take the next free number only when the mirrored one is already used. (This section originally illustrated that rule with "a future `stride-gemini` `1.39.0` pin should be tagged `v1.39.0`" — that example has since been overtaken by events, as the next section records.)
+
+### `v1.39.0`–`v1.41.0` were already spent, so the 1.39.0 `stride-gemini` pin is tagged `v1.42.0`
+
+The divergence above was not one-time after all. By the time `stride-gemini` reached 1.39.0, the catalog's own sequence had run three numbers past it — and only one of the three was a `stride-gemini` sync:
+
+- `v1.39.0` registered `stride-gemini-security-review` 0.1.0 (before the 1.38.0 pin, not between the two `stride-gemini` pins).
+- `v1.40.0` **is** the `stride-gemini` 1.38.0 pin — it took the next free catalog number rather than its mirrored `v1.38.0`, which the preceding section had already spent.
+- `v1.41.0` synced `stride-gemini-security-review` to 0.1.1. This is the only release that genuinely falls between the 1.38.0 and 1.39.0 `stride-gemini` pins.
+
+**The 1.39.0 `stride-gemini` pin is therefore tagged `v1.42.0`, not `v1.39.0`** — the next free number, exactly as the governing rule prescribes:
+
+- **The rule held; only the illustration failed.** The preceding section's rule ("take the next free number only when the mirrored one is already used") produced the right answer here. Its worked example did not, because it named a specific future number the catalog then spent. That example has been made version-neutral above.
+- **The `version` field in `extensions.json` still reads the true pinned extension version** (`1.39.0`). Only the git tag diverges, and nothing resolves through the tag.
+- **Expect the gap to widen, not close.** Every companion-extension release consumes a catalog number without a matching `stride-gemini` bump, so the catalog tag will keep drifting ahead. Read the tag as a catalog sequence number, and `extensions.json` as the record of what is pinned.
 
 ## License
 
