@@ -24,7 +24,7 @@ gemini extensions uninstall stride-gemini
 
 | Extension | Version | Install | Description |
 |-----------|---------|---------|-------------|
-| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.40.0 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. Optionally integrates the stride-gemini-exploratory-testing and stride-gemini-security-review extensions for gated manual testing and a deep security-considerations review. |
+| [`stride-gemini`](https://github.com/cheezy/stride-gemini) | 1.40.1 | `gemini extensions install https://github.com/cheezy/stride-gemini` | Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. Optionally integrates the stride-gemini-exploratory-testing and stride-gemini-security-review extensions for gated manual testing and a deep security-considerations review. |
 | [`stride-gemini-exploratory-testing`](https://github.com/cheezy/stride-gemini-exploratory-testing) | 0.1.0 | `gemini extensions install https://github.com/cheezy/stride-gemini-exploratory-testing` | Skilled human-style exploratory testing for Stride kanban — the Gemini CLI extension. Charter, explore, and debrief time-boxed exploratory-testing sessions against a running app, using heuristics, oracles, and SBTM session discipline to discover the risks and bugs scripted checks miss. |
 | [`stride-gemini-security-review`](https://github.com/cheezy/stride-gemini-security-review) | 0.1.1 | `gemini extensions install https://github.com/cheezy/stride-gemini-security-review` | AI-powered security review for code changes on Stride kanban — the Gemini CLI extension. Semantic-analysis vulnerability detection over a diff or the full tree, seven framework rule packs plus CI/CD and web defense-in-depth coverage, MAESTRO agentic-AI classification, SARIF output, severity gating, and a considerations mode that verifies a task's security_considerations were actually mitigated by the diff. |
 
@@ -69,6 +69,16 @@ The divergence above was not one-time after all. By the time `stride-gemini` rea
 - **The rule held; only the illustration failed.** The preceding section's rule ("take the next free number only when the mirrored one is already used") produced the right answer here. Its worked example did not, because it named a specific future number the catalog then spent. That example has been made version-neutral above.
 - **The `version` field in `extensions.json` still reads the true pinned extension version** (`1.39.0`). Only the git tag diverges, and nothing resolves through the tag.
 - **Expect the gap to widen, not close.** Every companion-extension release consumes a catalog number without a matching `stride-gemini` bump, so the catalog tag will keep drifting ahead. Read the tag as a catalog sequence number, and `extensions.json` as the record of what is pinned.
+
+### The 1.40.1 `stride-gemini` pin is tagged `v1.44.0` — the mirrored number is free, but it is *behind* the sequence
+
+The gap has now widened far enough to produce a case the notes above did not anticipate. `stride-gemini` 1.40.1 is a patch release, and its mirrored catalog tag would be `v1.40.1` — a number that is genuinely **free**, since the catalog has `v1.40.0` but never spent `v1.40.1`.
+
+**The 1.40.1 pin is nevertheless tagged `v1.44.0`**, the next number after `v1.43.0` (the 1.40.0 pin):
+
+- **"Next free" has always meant next free *going forward*.** Every episode above resolved to a number higher than the previous tag — `v1.38.0`, `v1.40.0`, `v1.42.0`. A `v1.40.1` tag created today would sit four releases behind `v1.43.0` in a sequence the notes above call authoritative, so a reader sorting tags would see the newest pin appear older than the one it supersedes. The rule's purpose is a legible release record; reusing a number from behind the head defeats it.
+- **A free mirrored number is not sufficient on its own.** Read the governing rule as: mirror the extension version when that number is both free *and* ahead of the current head; otherwise take the next number after the head. The earlier sections never had to say the second half because the drift had not yet passed a patch-level number.
+- **`extensions.json` still reads the true pinned extension version** (`1.40.1`). Only the git tag diverges, and nothing resolves through the tag.
 
 ## License
 
