@@ -1,22 +1,22 @@
 [
   {
     "name": "stride-gemini",
-    "version": "1.39.0",
-    "description": "Task lifecycle skills and custom agents for Stride kanban — the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. Optionally integrates the stride-gemini-exploratory-testing and stride-gemini-security-review extensions for gated manual testing and a deep security-considerations review.",
+    "version": "1.40.0",
+    "description": "Task lifecycle skills and custom agents for Stride kanban \u2014 the Gemini CLI extension. Claim, work, review, and complete Stride tasks and goals with workflow enforcement, hook execution, and five custom agents. Optionally integrates the stride-gemini-exploratory-testing and stride-gemini-security-review extensions for gated manual testing and a deep security-considerations review.",
     "repo": "https://github.com/cheezy/stride-gemini",
     "install_url": "https://github.com/cheezy/stride-gemini"
   },
   {
     "name": "stride-gemini-exploratory-testing",
     "version": "0.1.0",
-    "description": "Skilled human-style exploratory testing for Stride kanban — the Gemini CLI extension. Charter, explore, and debrief time-boxed exploratory-testing sessions against a running app, using heuristics, oracles, and SBTM session discipline to discover the risks and bugs scripted checks miss.",
+    "description": "Skilled human-style exploratory testing for Stride kanban \u2014 the Gemini CLI extension. Charter, explore, and debrief time-boxed exploratory-testing sessions against a running app, using heuristics, oracles, and SBTM session discipline to discover the risks and bugs scripted checks miss.",
     "repo": "https://github.com/cheezy/stride-gemini-exploratory-testing",
     "install_url": "https://github.com/cheezy/stride-gemini-exploratory-testing"
   },
   {
     "name": "stride-gemini-security-review",
     "version": "0.1.1",
-    "description": "AI-powered security review for code changes on Stride kanban — the Gemini CLI extension. Semantic-analysis vulnerability detection over a diff or the full tree, seven framework rule packs plus CI/CD and web defense-in-depth coverage, MAESTRO agentic-AI classification, SARIF output, severity gating, and a considerations mode that verifies a task's security_considerations were actually mitigated by the diff.",
+    "description": "AI-powered security review for code changes on Stride kanban \u2014 the Gemini CLI extension. Semantic-analysis vulnerability detection over a diff or the full tree, seven framework rule packs plus CI/CD and web defense-in-depth coverage, MAESTRO agentic-AI classification, SARIF output, severity gating, and a considerations mode that verifies a task's security_considerations were actually mitigated by the diff.",
     "repo": "https://github.com/cheezy/stride-gemini-security-review",
     "install_url": "https://github.com/cheezy/stride-gemini-security-review"
   }
