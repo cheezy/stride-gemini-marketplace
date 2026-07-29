@@ -19,5 +19,12 @@
     "description": "AI-powered security review for code changes on Stride kanban \u2014 the Gemini CLI extension. Semantic-analysis vulnerability detection over a diff or the full tree, seven framework rule packs plus CI/CD and web defense-in-depth coverage, MAESTRO agentic-AI classification, SARIF output, severity gating, and a considerations mode that verifies a task's security_considerations were actually mitigated by the diff.",
     "repo": "https://github.com/cheezy/stride-gemini-security-review",
     "install_url": "https://github.com/cheezy/stride-gemini-security-review"
+  },
+  {
+    "name": "stride-gemini-ideation",
+    "version": "0.4.0",
+    "description": "Ideation commands, skill, and custom agents for Stride kanban \u2014 Gemini CLI edition. Turns a fuzzy idea into a committed requirements doc (/ideate) and seeds a Stride backlog from it (/stridify).",
+    "repo": "https://github.com/cheezy/stride-gemini-ideation",
+    "install_url": "https://github.com/cheezy/stride-gemini-ideation"
   }
 ]
