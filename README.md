@@ -81,6 +81,8 @@ The gap has now widened far enough to produce a case the notes above did not ant
 - **A free mirrored number is not sufficient on its own.** Read the governing rule as: mirror the extension version when that number is both free *and* ahead of the current head; otherwise take the next number after the head. The earlier sections never had to say the second half because the drift had not yet passed a patch-level number.
 - **`extensions.json` still reads the true pinned extension version** (`1.40.1`). Only the git tag diverges, and nothing resolves through the tag.
 
+The rule as restated here has since been applied a second time without incident: the **1.40.2** pin is tagged **`v1.46.0`** — its mirrored `v1.40.2` is free but sits behind the head, so the pin takes the next number after `v1.45.0`. That case needs no section of its own; it is the rule above working as written, recorded here so the record is not silent about it.
+
 ## License
 
 [MIT](LICENSE) © 2026 Jeff Morgan
