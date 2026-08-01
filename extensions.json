@@ -8,7 +8,7 @@
   },
   {
     "name": "stride-gemini-exploratory-testing",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Skilled human-style exploratory testing for Stride kanban \u2014 the Gemini CLI extension. Charter, explore, and debrief time-boxed exploratory-testing sessions against a running app, using heuristics, oracles, and SBTM session discipline to discover the risks and bugs scripted checks miss.",
     "repo": "https://github.com/cheezy/stride-gemini-exploratory-testing",
     "install_url": "https://github.com/cheezy/stride-gemini-exploratory-testing"
