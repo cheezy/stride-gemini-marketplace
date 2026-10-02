@@ -22,7 +22,7 @@
   },
   {
     "name": "stride-gemini-ideation",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "description": "Ideation commands, skill, and custom agents for Stride kanban \u2014 Gemini CLI edition. Turns a fuzzy idea into a committed requirements doc (/ideate) and seeds a Stride backlog from it (/stridify).",
     "repo": "https://github.com/cheezy/stride-gemini-ideation",
     "install_url": "https://github.com/cheezy/stride-gemini-ideation"
